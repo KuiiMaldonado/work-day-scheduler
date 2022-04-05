@@ -19,6 +19,11 @@ function checkTimeBlock() {
     });
 }
 
+//Function to load the events that are in the localStorage.
+function loadEvents() {
+    
+}
+
 //Funtcion to save the calendar event on the clicked hour.
 function saveEvent(event) {
     let target = $(event.target);
