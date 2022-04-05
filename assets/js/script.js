@@ -9,7 +9,6 @@ function checkTimeBlock() {
     $('.time-block').each(function () {
        let blockHour = $(this).attr('id');
        let textArea = $(this).find('textarea')
-       console.log(textArea);
 
        if (blockHour < currentTime)
            textArea.addClass('past');
