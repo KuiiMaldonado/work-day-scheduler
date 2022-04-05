@@ -19,5 +19,14 @@ function checkTimeBlock() {
     });
 }
 
+//Funtcion to save the calendar event on the clicked hour.
+function saveEvent(event) {
+    let target = $(event.target);
+    console.log(target);
+
+    let text = target.siblings('.description').val();
+    console.log(text);
+}
+
 checkTimeBlock();
 $('.saveBtn').on('click', saveEvent);
