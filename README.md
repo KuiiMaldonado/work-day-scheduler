@@ -26,3 +26,23 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+
+## Deployed app
+
+### URL: https://kuiimaldonado.github.io/work-day-scheduler/
+
+In the main screen you will be displayed with the date and the time blocks 
+for each working hour (from 08:00 to 18:00).
+![Work day scheduler](assets/images/main_screen.jpg)
+
+The time blocks will have a gray, red or green. Depending on what time is it.
+If the time block is referencing:
+- Past hour -> gray
+- Current hour -> red
+- Future hour -> green
+![Time blocks color depending on the time](assets/images/past_present_future_time_blocks.jpg)
+
+To save an event on your scheduler you just simply have to write down in the empty
+space. When you are ready click the save button (blue one) besides the event.
+This way you will never miss any event during your working hours.
+![Save an event in your scheduler](assets/images/save_event.jpg)
