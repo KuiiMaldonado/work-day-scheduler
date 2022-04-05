@@ -22,10 +22,14 @@ function checkTimeBlock() {
 //Funtcion to save the calendar event on the clicked hour.
 function saveEvent(event) {
     let target = $(event.target);
-    console.log(target);
-
     let text = target.siblings('.description').val();
-    console.log(text);
+    let blockID = target.parent().attr('id');
+
+    //Sometimes either of the variable is undefined. That's why I validate before saving.
+    if (text !== undefined && blockID !== undefined)
+        localStorage.setItem(blockID, text);
+    else
+        alert('Ooops something went wrong when saving. Please try again');
 }
 
 checkTimeBlock();
