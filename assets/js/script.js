@@ -20,3 +20,4 @@ function checkTimeBlock() {
 }
 
 checkTimeBlock();
+$('.saveBtn').on('click', saveEvent);
