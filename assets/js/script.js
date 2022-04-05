@@ -21,7 +21,14 @@ function checkTimeBlock() {
 
 //Function to load the events that are in the localStorage.
 function loadEvents() {
-    
+    $('.time-block').each(function () {
+        let blockID = $(this).attr('id');
+        let event = localStorage.getItem(blockID);
+
+        if (event !== null) {
+            $(this).find('.description').val(event);
+        }
+    })
 }
 
 //Funtcion to save the calendar event on the clicked hour.
@@ -38,4 +45,5 @@ function saveEvent(event) {
 }
 
 checkTimeBlock();
+loadEvents();
 $('.saveBtn').on('click', saveEvent);
