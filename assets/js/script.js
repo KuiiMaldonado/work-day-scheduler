@@ -34,14 +34,22 @@ function loadEvents() {
 //Funtcion to save the calendar event on the clicked hour.
 function saveEvent(event) {
     let target = $(event.target);
-    let text = target.siblings('.description').val();
-    let blockID = target.parent().attr('id');
+    let text;
+    let blockID;
 
-    //Sometimes either of the variable is undefined. That's why I validate before saving.
-    if (text !== undefined && blockID !== undefined)
-        localStorage.setItem(blockID, text);
-    else
-        alert('Ooops something went wrong when saving. Please try again');
+    let classElement = target.attr('class')
+    console.log(classElement);
+    if (classElement === 'fas fa-save') {
+        let btn = target.parent();
+        console.log(btn);
+        text = btn.siblings('.description').val();
+        blockID = btn.parent().attr('id');
+    }
+    else {
+        text = target.siblings('.description').val();
+        blockID = target.parent().attr('id');
+    }
+    localStorage.setItem(blockID, text);
 }
 
 checkTimeBlock();
